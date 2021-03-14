@@ -1,0 +1,13 @@
+# Tell travis what language to expect
+language: python 
+# tesll travis the language version.
+python:
+  - "3.6"
+# tell which services are going to be used. 
+services: 
+  -docker
+# this is a script that travis CI will run befor it does any of the automation tasks
+before_script: pip install docker-compose
+
+script: 
+  docker-compose run app sh -c "python manage.py test && flake8"

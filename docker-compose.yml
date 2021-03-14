@@ -1,0 +1,16 @@
+# version of docker compose that we are going to use.
+version: "3"
+
+# services we are going to use.
+services: 
+  app: 
+    build: 
+      context: .  #setting the context to our current directory that we are running our project from.
+    ports: 
+      - "8000:8000" #mapping the ports 8000 in our real project to port 8000 in the docker image    
+    volumes:  #volume allows us to update projects in real time to our images in docker.
+    - ./app:/app #maps the app directory in our project to the app directory in our project. 
+    command: > 
+      sh -c "python manage.py runserver 0.0.0.0:8000" 
+      
+#runs the shell command to run python 

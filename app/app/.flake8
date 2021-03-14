@@ -1,0 +1,6 @@
+[flake8]
+exclude =  #exclued some of the automated scripts
+migrations,
+_pycache_,
+manage.py,
+settings.py 
