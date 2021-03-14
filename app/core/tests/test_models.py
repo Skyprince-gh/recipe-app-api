@@ -14,4 +14,4 @@ class ModelTests(TestCase):
       )
 
     self.assertEqual(user.email, email)
-    self.assertTrue(user.check_password, password) #you use the check_password function because passwords are encrypted
+    self.assertTrue(user.check_password(password)) #you use the check_password function because passwords are encrypted
